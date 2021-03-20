@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <meta charset="utf-8">
+    <title>Currículo Gustavo</title>
+</head>
+
+
+<body class="claro">
+    
+
+
+    <header>
+        <p>Gustavo Angelozi<br> Frederico</p> <br>
+        <h5>Técnico em informática</h5>
+    </header>
+
+        <aside>
+            <img id="foto" src="Gustavo.jpg" alt="Imagem não carregada.">
+            <h3>Informações pessoais</h3>
+            <hr>
+            <p>Sou um estudante de ensino médio cursante
+                de informática sem muitas experiências
+                profissionais. Busco alguma oportunidade
+                de ampliar meus conhecimentos e
+                experiências na área da Tecnologia da
+                Informação.</p>
+            <hr>
+            <h3>Foco profissional</h3>
+            <hr>
+            <p>Programador avançado
+                Engenheiro de Softwares
+                Administrador de banco de dados
+                Analista de Sistemas
+                Webmaster</p>
+            <hr>
+            <h3>Contato</h3>
+            <hr>
+            <p>Telefone: 3931-1381
+                Celular: 11 99513-3112
+                E-mail: gustavofrederico99@gmail.com
+                Endereço: Rua Silvano de Almeida 309,
+                Bairro do Limão, São Paulo</p>
+
+            <aside class="aside2">
+                <h3>Pontos fortes</h3>
+                <p>Liderança
+                    Habilidade em lidar com pessoas
+                    Criativo
+                    Extrovertido
+                    Compreensivo</p>
+            </aside>
+        </aside>
+
+
+        <section>
+            <h3>Experiências e realizações profissionais</h3>
+            <h4>Curso de Competência Transversal -
+                Lógica da programação - Senai <br> <small>(Via Web com certificado)</small></h4>
+            <p>Introdução à lógica de programação e programação
+                básica na linguagem nativa</p>
+
+            <h4>Curso de Android Studio<br> <small>(Via Web com certificado)</small></h4>
+            <p>Criação de aplicativos mobile compativeis tanto com o
+                sistema Android como IOS e Windows phone por meio
+                da IDE Android Studio</p>
+
+            <h4 id="busca">Em busca de experiência profissional.</h4>
+            <h3>Histórico acadêmico</h3>
+            <h4>Colégio Van Gogh <br> <small>Ensino fundamental 1 e 2</small></h4>
+            <p>Completo em 2017</p>
+            <h4>Escola de inglês Yazigi <br> <small>3 anos com certificado de nível médio.</small></h4>
+            <p>Completo em 2015</p>
+            <h4>Escola técnica federal - Instituto Federal
+                de São Paulo</h4>
+            <p>Cursando - Atualmente no terceiro ano
+                4 anos letivos.
+                <br>Curso técnico integrado em informática.</p>
+
+                <!-- <button class="acender">Modo claro</button>
+            <button class="apagar">Modo noturno</button> -->
+            
+            <div id="controlers">
+            <img src="img/Lua.png" class="apagar"  />
+            <label class="switch">
+                <input type="checkbox" id="checkbox_cor" checked>
+                <span class="slider round"></span>
+              </label>
+              <img src="img/Sol.png" class="acender" />
+            </div>
+        </section>
+
+
+</body>
+<script src="jquery-3.5.1.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            
+            
+            $("#foto").mouseenter(function() {
+                $(this).addClass("foto_com_mouse");
+                $(this).removeClass("foto_sem_mouse");
+            });
+
+            $("#foto").mouseleave(function() {
+                $(this).removeClass("foto_com_mouse");
+                $(this).addClass("foto_sem_mouse");
+            });
+
+
+            $(".switch").click(function() {
+            if($("#checkbox_cor").is(":checked")){
+                    $.fn.mudarCorClaro();
+                    $("body").removeClass("escuro");
+                    $("body").addClass("claro");
+                    $("checkbox_cor").removeAtrr("checked");
+            }
+            else {
+                $("body").removeClass("claro");
+                    $("body").addClass("escuro");
+                    $("checkbox_cor").attr("checked", true);
+                    $.fn.mudarCorEscuro();
+                    
+            }
+            });
+            
+            $.fn.mudarCorEscuro = function() {
+                $("h1,h2,h3,h4,p").css("color", "white");
+                $("section h3, .aside2 h3").css("background-color", "#4B0082");
+                $("aside").css("background-color","#4B0082");
+                $("header").css("background-color","#4B0082");
+                $(".aside2").css("background-color","rgb(32, 26, 26)");;
+            }
+
+            $.fn.mudarCorClaro = function() {
+                $("h1,h2,h3,h4,p").css("color", "black");
+                $("section h3, .aside2 h3").css("background-color", "#3c5d79");
+                $("aside").css("background-color","#3c5d79");
+                $("header").css("background-color","#3c5d79");
+                $(".aside2").css("background-color","white");
+                $("header p").css("color","#80bfff");
+                $("aside h3, aside p").css("color","#80bfff");
+                $(".aside2 p").css("color","black");
+                $("section h3").css("color","#b3e6ff");
+            }
+
+
+        });
+
+    </script>
+</html>
