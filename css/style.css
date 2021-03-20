@@ -285,7 +285,21 @@ section p {
         margin-top:5%;
     }
 
+
+    .acender, .apagar {
+        width:10%;
+    }
     
+    .switch {
+        width:15%;
+        height:auto;
+    }
+
+    .slider:before {
+        width:40%;
+        height:80%;
+        align-self: flex-end;
+    }
 }
 
 
@@ -404,12 +418,20 @@ section p {
     }
     
     .acender, .apagar {
-        width:15%;
+        width:25%;
         border:none;
     }
 
     .switch {
         margin-top:6%;
+        width:35%;
+        height:40px;
+    }
+
+    .slider:before {
+        right:0;
+        width:60%;
+        height:80%;
     }
 
     #controlers {
@@ -417,5 +439,13 @@ section p {
         text-align:center;
         margin:auto;
     }
+
+    .slider.round {
+        border-radius: 0;
+      }
+      
+      .slider.round:before {
+        border-radius: 0%;
+      }
     
 }  
